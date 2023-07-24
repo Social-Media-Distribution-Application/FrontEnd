@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: #141414;
+  font-family: 'Caveat', cursive;
+  font-size: 140%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.fontTitle{
+  position: absolute;
+  left: 42%;
+  background: linear-gradient(90deg,#12cac7 ,#35baba,#5a81ca,#3636d4,#55cced );
+  background-size: 140%;
+  font-family: 'Lobster', cursive;
+  font-size: 250%;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate{
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
+
+.block{
+  position: relative;
+  margin: 10% auto 0;
+  width: 82%;
+  height: 700px;
+  background: linear-gradient(0deg , black, rgb(44,44,44) );
+}
+.glow::before,.glow::after{
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    background: linear-gradient(45deg,#12cac7 ,#35baba,#5a81ca,#3636d4,#55cced );
+    background-size: 200%;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    animation: animate 15s linear infinite;
+  }
+  @keyframes animate{
+    0%{
+      background-position: 0 0;
+    }
+    100%{
+      background-position: 400%;
+    }
+    
+  }
+.glow::after{
+  filter: blur(40px);
+}
